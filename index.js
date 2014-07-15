@@ -1,0 +1,38 @@
+'use strict';
+
+var express     = require('express');
+var url         = require('url');
+var gulp        = require('gulp');
+var app         = express();
+var serveStatic = require('serve-static');
+var bodyParser  = require('body-parser');
+var cookieParser = require('cookie-parser');
+var ReactAsync  = require('react-async');
+var livereload  = require('connect-livereload');
+var lrserver    = require('tiny-lr')();
+var refresh     = require('gulp-livereload');
+var lrport      = 35729;
+var serverport  = 3000;
+
+require('node-jsx').install();
+var client = require('./app');
+
+app.use(livereload({ port: lrport }));
+app.use(serveStatic('./public'));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(cookieParser());
+app.use(function(req, res, next) {
+  var path = url.parse(req.path).pathname;
+  var App = client({path: path});
+  ReactAsync.renderComponentToStringWithAsyncState(App, function(err, html) {
+    if (err) next(err);
+    res.send('<!doctype html>\n'+html);
+  });
+});
+
+app.listen(serverport, function() {
+  console.log('Listening at port ' + serverport);
+});
+
+
