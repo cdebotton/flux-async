@@ -14,6 +14,9 @@ var refresh     = require('gulp-livereload');
 var lrport      = 35729;
 var serverport  = 3000;
 var Buffers     = require('./buffers');
+var env         = process.env.NODE_ENV === 'production' ?
+                    'production' :
+                    'development';
 
 require('node-jsx').install();
 var client = require('./app');
@@ -32,6 +35,7 @@ app.use(livereload({ port: lrport }))
      });
    })
    .listen(serverport, function() {
-     console.log('Listening at port ' + serverport);
-     process.stdout.write(Buffers.Ready);
+     if (env === 'development') {
+       process.stdout.write(Buffers.READY);
+     }
    });

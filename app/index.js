@@ -11,7 +11,7 @@ var App = React.createClass({
         <link rel="stylesheet" href="/stylesheets/app.css" />
       </head>
       <body>
-        <h1>Hello, Worlds!</h1>
+        <h1>Hello, World!</h1>
         <script src="/javascripts/bundle.js" />
       </body>
       </html>

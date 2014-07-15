@@ -22,8 +22,9 @@ module.exports = function () {
     })
     .on('readable', function() {
       this.stdout.on('data', function(data) {
-        if (data === Buffers.READY) {
-          console.log('SERVER IS READY~~~~~');
+        var str = data.toString('utf-8', 0, 35);
+        var cpr = Buffers.READY.toString('utf-8', 0, 35);
+        if (data.toString() === Buffers.READY.toString()) {
           gulp.src('./app/index.js')
             .pipe(refresh(lrserver));
         }
