@@ -13,6 +13,7 @@ var lrserver    = require('tiny-lr')();
 var refresh     = require('gulp-livereload');
 var lrport      = 35729;
 var serverport  = 3000;
+var Buffers     = require('./buffers');
 
 require('node-jsx').install();
 var client = require('./app');
@@ -32,4 +33,5 @@ app.use(livereload({ port: lrport }))
    })
    .listen(serverport, function() {
      console.log('Listening at port ' + serverport);
+     process.stdout.write(Buffers.Ready);
    });
