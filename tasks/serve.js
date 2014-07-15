@@ -34,3 +34,7 @@ module.exports = function () {
       console.log('Change observed, server restarted', changed);
     });
 };
+
+exports.production = function() {
+  require('../index');
+};

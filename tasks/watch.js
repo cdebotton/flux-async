@@ -2,7 +2,6 @@
 
 var gulp = require('gulp');
 
-module.exports = function(ENV) {
+module.exports = function() {
   gulp.watch('./app/**/*.styl', ['stylus']);
-  // gulp.watch('./app/**/*.js', ['browserify']);
 };
