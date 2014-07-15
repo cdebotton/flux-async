@@ -17,22 +17,19 @@ var serverport  = 3000;
 require('node-jsx').install();
 var client = require('./app');
 
-app.use(livereload({ port: lrport }));
-app.use(serveStatic('./public'));
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-app.use(cookieParser());
-app.use(function(req, res, next) {
-  var path = url.parse(req.path).pathname;
-  var App = client({path: path});
-  ReactAsync.renderComponentToStringWithAsyncState(App, function(err, html) {
-    if (err) next(err);
-    res.send('<!doctype html>\n'+html);
-  });
-});
-
-app.listen(serverport, function() {
-  console.log('Listening at port ' + serverport);
-});
-
-
+app.use(livereload({ port: lrport }))
+   .use(serveStatic('./public'))
+   .use(bodyParser.urlencoded({ extended: true }))
+   .use(bodyParser.json())
+   .use(cookieParser())
+   .use(function(req, res, next) {
+     var path = url.parse(req.path).pathname;
+     var App = client({path: path});
+     ReactAsync.renderComponentToStringWithAsyncState(App, function(err, html) {
+       if (err) next(err);
+       res.send('<!doctype html>\n'+html);
+     });
+   })
+   .listen(serverport, function() {
+     console.log('Listening at port ' + serverport);
+   });

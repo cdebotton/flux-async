@@ -13,7 +13,7 @@ gulp.task('serve', ServeTask);
 gulp.task('watch', WatchTask);
 gulp.task('open', OpenTask);
 
-gulp.task('default', ['stylus', 'browserify', 'watch', 'serve', 'open']);
+gulp.task('default', ['stylus', 'browserify', 'watch', 'serve']);
 
 gulp.task('production', [
   'stylus:production',
