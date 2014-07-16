@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "browserify": {
+    "fast": true,
     "transform": [
       [
         "reactify",
