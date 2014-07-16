@@ -13,6 +13,7 @@ module.exports = React.createClass({
           <Link to="video">Video</Link>
           <Link to="photography">Photography</Link>
         </nav>
+        <p>This is the work page</p>
         {this.props.activeRoute}
       </div>
     );

@@ -5,7 +5,10 @@ var React = require('react');
 module.exports = React.createClass({
   render: function() {
     return (
-      <h3>Video</h3>
+      <div className="video">
+        <h3>Video</h3>
+        <p>This is the video page.</p>
+      </div>
     );
   }
 });

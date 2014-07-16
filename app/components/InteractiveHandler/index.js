@@ -5,7 +5,10 @@ var React = require('react');
 module.exports = React.createClass({
   render: function() {
     return (
-      <h3>Interactive</h3>
+      <div className="interactive">
+        <h3>Interactive</h3>
+        <p>This is the interactive page.</p>
+      </div>
     );
   }
 });
