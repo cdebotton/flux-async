@@ -18,8 +18,8 @@ module.exports = function() {
         <Route name="interactive" handler={InteractiveHandler} />
         <Route name="video" handler={VideoHandler} />
         <Route name="photography" handler={PhotographyHandler} />
-        <Route name="admin" handler={AdminHandler} />
       </Route>
+      <Route name="admin" handler={AdminHandler} />
       <Route name="about" handler={AboutHandler} />
     </Route>
   );
