@@ -64,6 +64,7 @@
     "watchify": "~0.10.2",
     "react": "~0.10.0",
     "react-async": "~0.9.4",
-    "react-nested-router": "~0.2.1"
+    "react-nested-router": "~0.2.1",
+    "es6-promise": "~1.0.0"
   }
 }
