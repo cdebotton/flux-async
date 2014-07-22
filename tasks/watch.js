@@ -14,6 +14,8 @@ module.exports = function() {
   function rebundle() {
     bundler.transform('reactify')
       .bundle()
+      .on('error', gutil.log)
+      .on('log', gutil.log)
       .pipe(source('bundle.js'))
       .pipe(gulp.dest('./public/javascripts/'))
       .pipe(refresh(lrserver));

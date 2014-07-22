@@ -1,9 +1,9 @@
 /** @jsx React.DOM */
 
-var Route = require('react-nested-router').Route;
-var IndexHandler = require('../IndexHandler');
-var AdminHandler = require('../AdminHandler');
-var App = require('../App');
+var Route         = require('react-nested-router').Route;
+var IndexHandler  = require('./IndexHandler');
+var AdminHandler  = require('./AdminHandler');
+var App           = require('../components/App');
 
 module.exports = function() {
   return (
