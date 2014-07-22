@@ -9,7 +9,7 @@ var source = require('vinyl-source-stream');
 
 module.exports = function() {
   gulp.watch('./app/**/*.styl', ['stylus']);
-  // gulp.watch('./app/**/*.js', ['browserify']);
+
   var bundler = watchify('./app/index.js');
   function rebundle() {
     bundler.transform('reactify')
