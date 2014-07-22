@@ -11,8 +11,6 @@ var App = React.createClass({
           <h1>Hello, World!</h1>
           <nav>
             <Link to="/">Home</Link>
-            <Link to="about">About</Link>
-            <Link to="work">Work</Link>
             <Link to="admin">Admin</Link>
           </nav>
         </header>
