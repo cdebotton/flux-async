@@ -15,10 +15,6 @@ var App = React.createClass({
           </nav>
         </header>
         {this.props.activeRoute}
-        <footer>
-          <h2>Contact Us</h2>
-          <a href="mailto:1">Mail</a>
-        </footer>
       </div>
     );
   }
