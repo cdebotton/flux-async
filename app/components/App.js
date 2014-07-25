@@ -11,7 +11,6 @@ var App = React.createClass({
           <h1>Hello, World!</h1>
           <nav>
             <Link to="/">Home</Link>
-            <Link to="admin">Admin</Link>
           </nav>
         </header>
         {this.props.activeRoute}

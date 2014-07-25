@@ -47,4 +47,4 @@ var AppStore = merge(EventEmitter.prototype, {
   })
 });
 
-module.exports = AppStore;
+module.exports =  AppStore;
