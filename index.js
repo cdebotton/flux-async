@@ -2,6 +2,7 @@
 
 var express     = require('express');
 var url         = require('url');
+var open        = require('open');
 var gulp        = require('gulp');
 var app         = express();
 var serveStatic = require('serve-static');
@@ -40,7 +41,5 @@ app.set('views', './app/views')
    //   });
    // })
    .listen(serverport, function() {
-     if (env === 'development') {
-       process.stdout.write(Buffers.READY);
-     }
+     open('http://localhost:'+serverport);
    });
