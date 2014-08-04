@@ -1,7 +1,7 @@
 /** @jsx React.DOM */
 
 var React = require('react');
-var Link = require('react-nested-router').Link;
+var Link = require('react-router').Link;
 
 var App = React.createClass({
   render: function() {
@@ -13,7 +13,7 @@ var App = React.createClass({
             <Link to="/">Home</Link>
           </nav>
         </header>
-        {this.props.activeRoute}
+        {this.props.activeRouteHandler()}
       </div>
     );
   }
