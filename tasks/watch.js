@@ -11,6 +11,7 @@ module.exports = function() {
   gulp.watch('./app/**/*.styl', ['stylus']);
 
   var bundler = watchify('./app/index.js');
+  // EMFILE PROBLEM HERE
   function rebundle() {
     bundler.transform('reactify')
       .bundle()
